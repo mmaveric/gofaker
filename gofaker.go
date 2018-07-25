@@ -16,6 +16,28 @@ func Seed(seed int64) {
 func SetLocales(locales ...string) {
 	defaultGenerator.locales = locales
 }
+
+func Word() string {
+	return defaultGenerator.Word()
+}
+func Words(number int) []string {
+	return defaultGenerator.Words(number)
+}
+func Sentence(nbWords int) string {
+	return defaultGenerator.Sentence(nbWords)
+}
+func Sentences(nb int) []string {
+	return defaultGenerator.Sentences(nb)
+}
+func Paragraph(nbSentences int) string {
+	return defaultGenerator.Paragraph(nbSentences)
+}
+func Paragraphs(nb int) []string {
+	return defaultGenerator.Paragraphs(nb)
+}
+func Text(maxNbChars int) string {
+	return defaultGenerator.Text(maxNbChars)
+}
 func Country() string {
 	return defaultGenerator.Country()
 }
