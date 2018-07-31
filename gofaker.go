@@ -35,14 +35,37 @@ func Paragraph(nbSentences int) string {
 func Paragraphs(nb int) []string {
 	return defaultGenerator.Paragraphs(nb)
 }
-func Text(maxNbChars int) string {
-	return defaultGenerator.Text(maxNbChars)
+func Text(parargaphs int) string {
+	return defaultGenerator.Text(parargaphs)
 }
 func Country() string {
 	return defaultGenerator.Country()
 }
+
+func Digit() string {
+	return Numerify("#")
+}
+func DigitNotNull() string {
+	return Numerify("%")
+}
+
+func Number(nbDigits int, strict bool) string {
+	if nbDigits <= 0 {
+		return ""
+	}
+	tmpl := ""
+	if strict {
+		tmpl += "%"
+	} else {
+		tmpl += "#"
+	}
+	for i := 1; i < nbDigits; i++ {
+		tmpl += "#"
+	}
+	return Numerify(tmpl)
+}
 func Generate(tmpl string) string {
-	return defaultGenerator.Generate(tmpl)
+	return defaultGenerator.Generate(tmpl, "")
 }
 
 func Numerify(tmpl string) string {

@@ -8,8 +8,8 @@ import (
 
 func main() {
 	gofaker.Seed(0)
-	gofaker.SetLocales("en_US")
-	for i := 0; i < 10; i++ {
-		fmt.Println(gofaker.Generate("{{phone_number.phone_number}}"))
+	gofaker.SetLocales("en_US", "ru_RU", "kk_KZ")
+	for i := 0; i < 100; i++ {
+		fmt.Println(gofaker.Number(12, true))
 	}
 }
